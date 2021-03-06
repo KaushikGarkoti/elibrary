@@ -21,7 +21,7 @@ if (isset($_POST['update'])) {
     $textarea1 = $_POST['description'];
     $fileurl =  $_POST['bookurl'];
     $id = $_POST['bookid'];
-    $sqlquery = "UPDATE `books` SET `name` = '$name',`author` = '$Author', `description` = '$textarea1' WHERE `id`='$id'";
+    $sqlquery = "UPDATE `books` SET `name` = '$name',`author` = '$Author', `description` = '$textarea1', `id` = '$id' WHERE `id`='$id'";
 }
 
 if (isset($_POST['delete'])) {
@@ -32,7 +32,7 @@ if (isset($_POST['delete'])) {
 
 if(mysqli_query($db, $sqlquery) && isset($_POST['update'])){
     echo "Records updated successfully.";
-    header("Location: ./bookadded.php?id=$bookID"); /* Redirect browser */
+    header("Location: ./bookadded.php?id=$id"); /* Redirect browser */
     exit();
 } else if (mysqli_query($db, $sqlquery) && isset($_POST['delete'])){
     header("Location: ./hello.php?id=$bookID&opr=del"); /* Redirect browser */

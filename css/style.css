@@ -2,11 +2,9 @@
     font-family: 'Laila', sans-serif;
 }
 body {
-    background-color: #D9E8CE;
+    background-color: #6895ac;
 }
-.custom-nav {
-    background-color: #8b8851;
-}
+
 nav ul li a {
     font-size: 1.4rem;
 }
@@ -14,10 +12,18 @@ nav .nav-wrapper a {
     font-size: 1.4rem;
 }
 .custom-card {
-    background-color: #385720;
+    background-color: #132a37;
+    color: white;
 }
 .card-font {
-    font-size: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+}
+.card-font-author {
+    font-size: 1.2rem;
+    font-style: italic;
+    color:aliceblue;
     font-weight: 400;
 }
 .vertical-center {
@@ -26,4 +32,12 @@ nav .nav-wrapper a {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.custom-row {
+position: relative;
+width: 63.563%;
+height: 60.938%;
+margin-top: 4rem;
+border-radius: 3rem;
 }

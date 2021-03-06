@@ -35,12 +35,8 @@ if ($result->num_rows > 0) {
 }
 ?>
 <div class="container">
-<div class="row center-align white" style="position: relative;
-width: 53.563%;
-height: 30.938%;
-margin-top: 4rem;
-border-radius: 3rem;
-"><?php echo
+<div class="row center-align white custom-row"
+><?php echo
     "<form class='col s12' action='./update.php' method='POST'>
       <div class='row'>
         <div class='input-field col s12'>
@@ -62,13 +58,30 @@ border-radius: 3rem;
         <div class='input-field col s12'>
           <input type='text' id='bookid' name='bookid' value = '$bookID' hidden>
         </div>
-      <button class='waves-effect waves-light btn z-depth-3' type='submit' name = 'update' method='post' action='./update.php?'> <span>update</span></button>
-      <button class='waves-effect waves-light btn red z-depth-3' type='submit' name = 'delete' method='post' action='./update.php?'> <i class='material-icons'>delete</i><span>delete book</span></button>
+      <button class='waves-effect waves-light btn z-depth-3' name = 'update' method='post' action='./update.php?'> <span>update</span></button>
+      <button data-target='modal1' class=' modal-trigger waves-effect waves-light btn red z-depth-3'> <i class='material-icons'>delete</i><span>delete book</span></button>
+      <div id='modal1' class='modal bottom-sheet red lighten-3'>
+          <div class='modal-content'>
+            <h6>Are you sure you want to delete?</h6>
+          </div>
+    <div class='modal-footer'>
+    <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancel</a>
 
+    <button class= 'waves-effect waves-light btn red z-depth-3' name = 'delete' method='post' action='./update.php?'> <i class='material-icons'>delete</i><span>delete book</span></button>
+    </div>
+  </div>
       </div>
     </form>" ?>
   </div>
 </div> 
+<script>
+
+const elems = document.querySelectorAll('.modal');
+    const instances = M.Modal.init(elems, {
+        opacity: 0.5,
+    });
+</script>
+
 </body>
 </html> 
 
