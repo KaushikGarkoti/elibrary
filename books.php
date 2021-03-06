@@ -24,21 +24,22 @@ if ($result->num_rows > 0) {
     $col = 0;
 ?>
 
-        <div class='row'>
+        <div class='row' style='background-color:#6895ac'>
           <?php while($col < 4 && $i < count($data)) { ?>
-            <div class='col s12 m3 ' id=<?php echo $data[$i]['id'] ?>>
+            <div class='col s12 m3' id=<?php echo $data[$i]['id'] ?>>
               <div class='card custom-card'>
                 <div class='card-image'>
                   <img src= <?php echo $data[$i]['cover_image']?> style='height: 300px'>
                   <span class='card-title'> <?php echo $data[$i]['name']?></span>
                   <a href=<?php echo ('./editbook.php?id='.$data[$i]['id'])?> class='btn-floating halfway-fab waves-effect waves-light red'><i class='material-icons'>create</i></a>
                 </div>
+                <div class='card-action' style='background-color:#12525d'>
+                    <blockquote>
 
-                    <blockquote style='background-color: #cfdac8'>
-                        <a  style="display:block; font-color: #144C14;" href='#'><?php echo $data[$i]['author']?></a>
-                        <a  style="font-color: #144C14;" href= <?php echo ('./book.php?id='.$data[$i]['id'])?>>View Book</a> 
+                <a class='card-font card-font-author'style="display:block" href='#'><?php echo $data[$i]['author']?></a>
+                <a class='card-font' href= <?php echo ('./book.php?id='.$data[$i]['id'])?>>View Book</a> 
                     </blockquote>               
-
+                </div>
               </div>
             </div>
     <?php 

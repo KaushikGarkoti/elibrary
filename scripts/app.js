@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
         edge: 'left',
         preventScrolling: true,
     });
+
+
     if (getQueryVariable('opr') == 'add') {
         addBook();
     }
