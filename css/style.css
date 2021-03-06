@@ -1,0 +1,29 @@
+* {
+    font-family: 'Laila', sans-serif;
+}
+body {
+    background-color: #D9E8CE;
+}
+.custom-nav {
+    background-color: #8b8851;
+}
+nav ul li a {
+    font-size: 1.4rem;
+}
+nav .nav-wrapper a {
+    font-size: 1.4rem;
+}
+.custom-card {
+    background-color: #385720;
+}
+.card-font {
+    font-size: 0.5rem;
+    font-weight: 400;
+}
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
