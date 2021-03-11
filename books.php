@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
     $col = 0;
 ?>
 
-        <div class='row' style='background-color:#6895ac'>
+        <div class='row' style='background-color:#FFFFFF'>
           <?php while($col < 4 && $i < count($data)) { ?>
             <div class='col s12 m3' id=<?php echo $data[$i]['id'] ?>>
               <div class='card custom-card'>
@@ -33,11 +33,11 @@ if ($result->num_rows > 0) {
                   <span class='card-title'> <?php echo $data[$i]['name']?></span>
                   <a href=<?php echo ('./editbook.php?id='.$data[$i]['id'])?> class='btn-floating halfway-fab waves-effect waves-light red'><i class='material-icons'>create</i></a>
                 </div>
-                <div class='card-action' style='background-color:#12525d'>
+                <div class='card-action' style='background-color:#B7C9A9'>
                     <blockquote>
 
-                <a class='card-font card-font-author'style="display:block" href='#'><?php echo $data[$i]['author']?></a>
-                <a class='card-font' href= <?php echo ('./book.php?id='.$data[$i]['id'])?>>View Book</a> 
+                <a class='card-font card-font-author'style="display:block; color: black" href='#'><?php echo $data[$i]['author']?></a>
+                <a class='card-font'style="display:block; color: black" href= <?php echo ('./book.php?id='.$data[$i]['id'])?>>View Book</a> 
                     </blockquote>               
                 </div>
               </div>

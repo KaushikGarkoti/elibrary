@@ -2,7 +2,7 @@
     font-family: 'Laila', sans-serif;
 }
 body {
-    background-color: #6895ac;
+    background-color: #FFFFFF;
 }
 
 nav ul li a {
@@ -12,18 +12,18 @@ nav .nav-wrapper a {
     font-size: 1.4rem;
 }
 .custom-card {
-    background-color: #132a37;
+    background-color: #B7C9A9;
     color: white;
 }
 .card-font {
     font-size: 1.2rem;
     font-weight: 400;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .card-font-author {
     font-size: 1.2rem;
     font-style: italic;
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     font-weight: 400;
 }
 .vertical-center {
@@ -41,3 +41,23 @@ height: 60.938%;
 margin-top: 4rem;
 border-radius: 3rem;
 }
+
+.tabs .tab a{
+    color:#000;
+    font-size: 1rem;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+    background-color:#eee;
+    color:#000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+    background-color:#B7C9A9;
+    color:rgb(0, 0, 0);
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+    background-color:rgb(127, 151, 102);
+} 
+
