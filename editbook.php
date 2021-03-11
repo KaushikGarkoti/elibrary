@@ -1,6 +1,12 @@
-
+<?php session_start();?>
+<?php 
+if($_SESSION['role'] !== 'admin') {
+  header("Location: HTTP/1.0 403 Forbidden");
+  exit;
+}
+?>
   <?php include 'header.php'; ?>
-  <?php include 'navbar.html'?>
+  <?php include 'navbar.php'?>
   <?php 
 $serverName = "localhost";
 $userName = "root";

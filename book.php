@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 <?php include 'header.php'?>
-    <?php include 'navbar.html' ?>
+    <?php include 'navbar.php' ?>
     <div class="container"> <?php echo
         "<div class='row' style='margin-top:5rem'>
             <div class='col s12 m4'>
