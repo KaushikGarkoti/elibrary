@@ -62,6 +62,12 @@ if (isset($_POST['post2db'])) {
 ?>
 
 <div class='row'>
+<div class='col s12'>
+<p class='responsive-text'><h3>Control Panel</h3></p>
+
+
+
+</div>
     <div class='col s12'>
     <ul class='tabs'>
         <li class='tab col s3'><a href='#admins'>Admins</a></li>

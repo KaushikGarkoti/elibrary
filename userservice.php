@@ -50,15 +50,18 @@ if (isset($_POST['login'])) {
     $emaildb = "";
     $passworddb = "";
     $usernamedb = "";
+    $useriddb = "";
     if ($getemail->num_rows == 1) {
         while($row = $getemail->fetch_assoc()) {
           $emaildb = $row["email"];
           $passworddb = $row["password"];
           $usernamedb = $row["username"];
           $role = $row["role"];
+          $useriddb = $row["id"];
         }
         if (password_verify($password, $passworddb)) {
             $_SESSION['username'] = $usernamedb;
+            $_SESSION['userid'] = $useriddb;
             echo $_SESSION['role'] = $role; 
             header("Location:hello.php");
         }

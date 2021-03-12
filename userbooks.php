@@ -119,7 +119,7 @@ if ($result->num_rows > 0) {
                     <?php if ($_SESSION['role']=='admin') { ?> 
                     <a href= <?php echo ('./editbook.php?id='.$data[$i]['id'])?>
                     class='btn-floating halfway-fab waves-effect waves-light red'>
-                    <i class='material-icons'>create</i></a>;
+                    <i class='material-icons'>create</i></a>
                   <?php }
                   ?>
                 </div>
@@ -132,7 +132,7 @@ if ($result->num_rows > 0) {
                     <form action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method='POST' id = 'radioform'>
                     <?php 
                     
-                      if(isset($_SESSION['username'])) { ?>                        
+                      if(isset($_SESSION['role'])) { ?>                        
                         <p>
                         <label>
                             <input type='radio' name = 'group1' value = 'read' id = 'radio'>
@@ -141,7 +141,7 @@ if ($result->num_rows > 0) {
                         </p>  
                         <p>
                             <label>
-                                <input type='radio' name = 'group1' value = 'reading'>
+                                <input type='radio' name = 'group1' value = 'reading' disabled>
                                 <span class='black-text'>reading</span>
                             </label>
                         </p>     
