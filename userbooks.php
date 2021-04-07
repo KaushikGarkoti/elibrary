@@ -94,7 +94,7 @@ if ($result->num_rows > 0 ) {
   }
 }
 
-$sql = "SELECT name, author, description, cover_image, id FROM books";
+$sql = "SELECT name, author, description, cover_image, count, id FROM books";
 $result = mysqli_query($conn,$sql);
 $data = [];
 
@@ -138,28 +138,26 @@ if ($result->num_rows > 0) {
                             <input type='radio' name = 'group1' value = 'read' id = 'radio'>
                             <span class='black-text'>finished reading</span>
                         </label>
+                        <label>
+                            <input type='radio' name = 'group1' value = 'reading' disabled>
+                            <span class='black-text'>reading</span>
+                        </label>
                         </p>  
-                        <p>
-                            <label>
-                                <input type='radio' name = 'group1' value = 'reading' disabled>
-                                <span class='black-text'>reading</span>
-                            </label>
-                        </p>     
                         <p>
                             <label>
                                 <input type='radio' name = 'group1' value = 'wishlist'>
                                 <span class='black-text'>wishlist</span>
                             </label>
-                        </p>
-                        <p>
                             <label>
                                 <input type='radio' name = 'group1' value = 'request'>
                                 <span class='black-text'>request</span>
                             </label>
-                        </p>
+                        </p> 
                     <input type="text" name = 'bid' value = <?php echo $data[$i]['id']?> hidden>
-                    <button type='submit' data-target="#modal1" name = 'res' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
-                    <button class='waves-effect waves-light btn z-depth-3 center'> <span>Read Book</span></button>
+                    <button type='submit' id = 'submitbtn' data-target="#modal1" name = 'res' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
+                    <p>
+                    <span class = 'black-text'><?php echo $data[$i]['count'] ?> copies left</span>
+                    </p>
                     </form>
                     <?php }
                    ?> 
@@ -170,7 +168,7 @@ if ($result->num_rows > 0) {
                           <p>A bunch of text</p>
                         </div>
                         <div class='modal-footer'>
-                          <a href='#!'class='modal-close waves-effect waves-green btn-flat'>OK</a>
+                        <button type='submit' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
                         </div>
                       </div>";
                     ?>
@@ -194,11 +192,12 @@ if ($result->num_rows > 0) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.modal');
-    const instances = M.Modal.init(elems, {});
+   M.Modal.init(elems, {});
   });
 
-
-
-
+const btn = document.getElementById('submitbtn')
+btn.addEventListener('click', (event) => {
+  event.preventDefault()
+})
 </script>
 

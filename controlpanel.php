@@ -1,9 +1,12 @@
-<?php session_start();?>
+<!-- <?php session_start();?> -->
 <?php 
 if($_SESSION['role'] !== 'admin') {
   header("Location: HTTP/1.0 403 Forbidden");
   exit;
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <?php include 'header.php'; ?>
 <?php include 'navbar.php'; ?>
@@ -24,23 +27,22 @@ $Author = "";
 $textarea1 = "";
 $fileurl = "";
 
-  
-$target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-$_SESSION['targetfile'] = $target_file;
-$uploadOk = 1;
-
-move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
-
 if (isset($_POST['post2db'])) {
     $name = $_POST['name'];
     $Author = $_POST['Author'];
     $textarea1 = $_POST['textarea1'];
     $fileurl =  $_POST['fileurl'];
+
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Check if image file is a actual image or fake image
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    $_SESSION['targetfile'] = $target_file;
+    $uploadOk = 1;
+
+    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file);
 
 
     $sqlquery = "INSERT INTO books (name, author, description, cover_image) VALUES ('$name',  '$Author', ' $textarea1',  '$_SESSION[targetfile]')";
@@ -64,8 +66,6 @@ if (isset($_POST['post2db'])) {
 <div class='row'>
 <div class='col s12'>
 <p class='responsive-text'><h3>Control Panel</h3></p>
-
-
 
 </div>
     <div class='col s12'>

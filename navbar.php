@@ -1,6 +1,6 @@
-<?php 
+<!-- <?php 
 session_start();
-?>
+?> -->
 <header>
     <nav>
         <div class="nav-wrapper custom-nav center-align" style = "background-color: #B6C9A3">
