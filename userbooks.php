@@ -154,25 +154,23 @@ if ($result->num_rows > 0) {
                             </label>
                         </p> 
                     <input type="text" name = 'bid' value = <?php echo $data[$i]['id']?> hidden>
-                    <button type='submit' id = 'submitbtn' data-target="#modal1" name = 'res' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Save Response</a>
                     <p>
-                    <span class = 'black-text'><?php echo $data[$i]['count'] ?> copies left</span>
+                      <span class = 'black-text'><?php echo $data[$i]['count'] ?> copies left</span>
                     </p>
-                    </form>
-                    <?php }
-                   ?> 
-                   <?php
-                    echo "<div id='modal1' class='modal'>
+                    <div id='modal1' class='modal'>
                         <div class='modal-content'>
                           <h4 class='black-text'>Success</h4>
-                          <p>A bunch of text</p>
+                          <p class= 'black-text'>A bunch of text</p>
                         </div>
                         <div class='modal-footer'>
-                        <button type='submit' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
+                          <button type='submit' name = 'res' class='waves-effect waves-light btn z-depth-3 center modal-trigger'> <span>submit</span></button>
                         </div>
-                      </div>";
-                    ?>
+                      </div>
                 </div>
+                  </form>
+                    <?php }
+                   ?> 
               </div>
             </div>
     <?php 
@@ -187,17 +185,13 @@ if ($result->num_rows > 0) {
 }
 ?>
 <script>
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.modal');
    M.Modal.init(elems, {});
-  });
-
+});
 const btn = document.getElementById('submitbtn')
-btn.addEventListener('click', (event) => {
-  event.preventDefault()
-})
+btn.addEventListener('submit', (e) => {
+    e.preventDefault()
+  });
 </script>
 
